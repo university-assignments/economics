@@ -7,8 +7,8 @@ export function AllRouters ()
 {
 	return (
 		<Routes>
-			<Route path='/tests/1-velocity-of-money' element={ <VelocityOfMoneyPage /> } />
-			<Route index element={ <WelcomePage /> } />
+			<Route path='/economics/tests/1-velocity-of-money' element={ <VelocityOfMoneyPage /> } />
+			<Route path='/economics' element={ <WelcomePage /> } />
 		</Routes>
 	);
 }
