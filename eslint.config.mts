@@ -20,11 +20,13 @@ export default defineConfig([
 				arraysInArrays: false,
 			}],
 			'@stylistic/array-element-newline': [ 'error', 'consistent' ],
+			'@stylistic/brace-style': [ 'error', 'allman' ],
 			'@stylistic/comma-dangle': [ 'error', 'always-multiline' ],
 			'@stylistic/function-call-argument-newline': [ 'error', 'consistent' ],
 			'@stylistic/function-paren-newline': [ 'error', 'multiline-arguments' ],
 			'@stylistic/indent': [ 'error', 'tab' ],
 			'@stylistic/linebreak-style': [ 'error', 'windows' ],
+			'@stylistic/no-extra-parens': [ 'error', 'all', { ignoreJSX: 'all' }],
 			'@stylistic/object-curly-spacing': [ 'error', 'always', {
 				arraysInObjects: false,
 				objectsInObjects: false,
