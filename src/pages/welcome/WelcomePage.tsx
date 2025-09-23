@@ -14,6 +14,18 @@ const SECTIONS = [
 			N_1: '1350',
 		}),
 	},
+	{
+		title: 'Плановые показатели',
+		path: 'tests/2-planned-indicators',
+		search: new URLSearchParams({
+			fuel: [ 'МАЗ', 'Уголь', 'Газ' ].join('|'),
+			units: [ 'Т', 'Т', 'м^3' ].join('|'),
+			base: [ 550, 350, 650 ].join('|'),
+			plan: [ 500, 320, 650 ].join('|'),
+			fact: [ 520, 300, 690 ].join('|'),
+			k: [ 1.37, 0.9, 1.2 ].join('|'),
+		}),
+	},
 ];
 
 export default function WelcomePage ()
