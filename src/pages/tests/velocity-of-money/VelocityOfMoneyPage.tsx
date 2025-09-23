@@ -12,7 +12,7 @@ const calculateT = (D: number, V: number) => Number((D / V).toFixed(3));
 const calculateP = (D: number, B: number) => Number((D / B).toFixed(3));
 const calculateZ = (N: number, M: number) => Number((N / M).toFixed(3));
 
-export function VelocityOfMoneyPage ()
+export default function VelocityOfMoneyPage ()
 {
 	const [ searchParams, setSearchParams ] = useSearchParams();
 

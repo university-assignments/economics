@@ -9,14 +9,14 @@ const SECTIONS = [
 			Q_0: '9043.8',
 			Q_1: '10865.3',
 			M_0: '3615.2',
-			M_1: '3770.0',
-			N_0: '1370.0',
-			N_1: '1350.0',
+			M_1: '3770',
+			N_0: '1370',
+			N_1: '1350',
 		}),
 	},
 ];
 
-export function WelcomePage ()
+export default function WelcomePage ()
 {
 	return (
 		<ol>
