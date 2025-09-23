@@ -89,14 +89,14 @@ export default function PlannedIndicatorsPage ()
 					<TableHead>
 						<TableRow>
 							<TableCell colSpan={1}>Вид топлива</TableCell>
-							<TableCell colSpan={1}>Ед. изм.</TableCell>
-							<TableCell colSpan={3}>Расход Абс.</TableCell>
-							<TableCell colSpan={1}>К</TableCell>
-							<TableCell colSpan={3}>Расход УЕ</TableCell>
-							<TableCell colSpan={3}>ОВПЗ = П/Б</TableCell>
-							<TableCell colSpan={3}>ОВВП = Ф/П</TableCell>
-							<TableCell colSpan={3}>ОВФР = Ф/Б</TableCell>
-							<TableCell colSpan={3}>Удельный вес (%)</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={1}>Ед. изм.</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>Расход Абс.</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={1}>К</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>Расход УЕ</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>ОВПЗ = П/Б</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>ОВВП = Ф/П</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>ОВФР = Ф/Б</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>Удельный вес (%)</TableCell>
 						</TableRow>
 
 						<TableRow>
@@ -104,38 +104,38 @@ export default function PlannedIndicatorsPage ()
 							<TableCell></TableCell>
 
 							{ /* Единицы измерения */ }
-							<TableCell></TableCell>
+							<TableCell sx={{ borderLeft: 1 }}></TableCell>
 
 							{ /* Расход Абс. */ }
-							<TableCell>base</TableCell>
+							<TableCell sx={{ borderLeft: 1 }}>База</TableCell>
 							<TableCell>План</TableCell>
 							<TableCell>Факт</TableCell>
 
 							{ /* K */ }
-							<TableCell></TableCell>
+							<TableCell sx={{ borderLeft: 1 }}></TableCell>
 
 							{ /* Расход УЕ */ }
-							<TableCell>base</TableCell>
+							<TableCell sx={{ borderLeft: 1 }}>База</TableCell>
 							<TableCell>План</TableCell>
 							<TableCell>Факт</TableCell>
 
 							{ /* ОВПЗ = П/Б */ }
-							<TableCell>К</TableCell>
+							<TableCell sx={{ borderLeft: 1 }}>К</TableCell>
 							<TableCell>%</TableCell>
 							<TableCell>‰</TableCell>
 
 							{ /* ОВВП = Ф/П */ }
-							<TableCell>К</TableCell>
+							<TableCell sx={{ borderLeft: 1 }}>К</TableCell>
 							<TableCell>%</TableCell>
 							<TableCell>‰</TableCell>
 
 							{ /* ОВФР = Ф/Б */ }
-							<TableCell>К</TableCell>
+							<TableCell sx={{ borderLeft: 1 }}>К</TableCell>
 							<TableCell>%</TableCell>
 							<TableCell>‰</TableCell>
 
 							{ /* Удельный вес (%) */ }
-							<TableCell>base</TableCell>
+							<TableCell sx={{ borderLeft: 1 }}>База</TableCell>
 							<TableCell>План</TableCell>
 							<TableCell>Факт</TableCell>
 						</TableRow>
@@ -154,7 +154,7 @@ export default function PlannedIndicatorsPage ()
 										/>
 									</TableCell>
 
-									<TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>
 										{
 											typeof row['Единицы измерения'] === 'string'
 												? <TextField
@@ -168,10 +168,10 @@ export default function PlannedIndicatorsPage ()
 									</TableCell>
 
 									{ /* Расход Абс. */ }
-									<TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>
 										{
 											typeof row['Расход Абс.'].base === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='base' value={row['Расход Абс.'].base} onChange={ (ev) => replaceArrayValue(setBase, base, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='База' value={row['Расход Абс.'].base} onChange={ (ev) => replaceArrayValue(setBase, base, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
@@ -179,7 +179,7 @@ export default function PlannedIndicatorsPage ()
 									<TableCell>
 										{
 											typeof row['Расход Абс.'].plan === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='Q_0' value={row['Расход Абс.'].plan} onChange={ (ev) => replaceArrayValue(setPlan, plan, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='План' value={row['Расход Абс.'].plan} onChange={ (ev) => replaceArrayValue(setPlan, plan, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
@@ -187,42 +187,42 @@ export default function PlannedIndicatorsPage ()
 									<TableCell>
 										{
 											typeof row['Расход Абс.'].fact === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='Q_0' value={row['Расход Абс.'].fact} onChange={ (ev) => replaceArrayValue(setFact, fact, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='Факт' value={row['Расход Абс.'].fact} onChange={ (ev) => replaceArrayValue(setFact, fact, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
 
 									{ /* K */ }
-									<TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>
 										{
 											typeof row.k === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='Q_0' value={row.k} onChange={ (ev) => replaceArrayValue(setK, k, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='К' value={row.k} onChange={ (ev) => replaceArrayValue(setK, k, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
 
 									{ /* Расход УЕ */ }
-									<TableCell>{row['Расход УЕ'].base}</TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>{row['Расход УЕ'].base}</TableCell>
 									<TableCell>{row['Расход УЕ'].plan}</TableCell>
 									<TableCell>{row['Расход УЕ'].fact}</TableCell>
 
 									{ /* ОВПЗ = П/Б */ }
-									<TableCell>{row['ОВПЗ = П/Б'].k}</TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>{row['ОВПЗ = П/Б'].k}</TableCell>
 									<TableCell>{row['ОВПЗ = П/Б']['%']}</TableCell>
 									<TableCell>{row['ОВПЗ = П/Б']['‰']}</TableCell>
 
 									{ /* ОВВП = Ф/П */ }
-									<TableCell>{row['ОВВП = Ф/П'].k}</TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>{row['ОВВП = Ф/П'].k}</TableCell>
 									<TableCell>{row['ОВВП = Ф/П']['%']}</TableCell>
 									<TableCell>{row['ОВВП = Ф/П']['‰']}</TableCell>
 
 									{ /* ОВФР = Ф/Б */ }
-									<TableCell>{row['ОВФР = Ф/Б'].k}</TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>{row['ОВФР = Ф/Б'].k}</TableCell>
 									<TableCell>{row['ОВФР = Ф/Б']['%']}</TableCell>
 									<TableCell>{row['ОВФР = Ф/Б']['‰']}</TableCell>
 
 									{ /* Удельный вес (%) */ }
-									<TableCell>{row['Удельный вес (%)'].base}</TableCell>
+									<TableCell sx={{ borderLeft: 1 }}>{row['Удельный вес (%)'].base}</TableCell>
 									<TableCell>{row['Удельный вес (%)'].plan}</TableCell>
 									<TableCell>{row['Удельный вес (%)'].fact}</TableCell>
 								</StyledTableRow>
