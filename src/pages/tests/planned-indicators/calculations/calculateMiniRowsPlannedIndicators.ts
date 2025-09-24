@@ -23,20 +23,20 @@ export function calculateMiniRowsPlannedIndicators (rows: PlannedRowIndicatorDat
 
 			'ОВПЗ = П/Б': {
 				k: parameter1,
-				'%': parameter1 * 100,
-				'‰': parameter1 * 1000,
+				'%': Number((parameter1 * 100).toFixed(3)),
+				'‰': Number((parameter1 * 1000).toFixed(3)),
 			},
 
 			'ОВВП = Ф/П': {
 				k: parameter2,
-				'%': parameter2 * 100,
-				'‰': parameter2 * 1000,
+				'%': Number((parameter2 * 100).toFixed(3)),
+				'‰': Number((parameter2 * 1000).toFixed(3)),
 			},
 
 			'ОВФР = Ф/Б': {
 				k: parameter3,
-				'%': parameter3 * 100,
-				'‰': parameter3 * 1000,
+				'%': Number((parameter3 * 100).toFixed(3)),
+				'‰': Number((parameter3 * 1000).toFixed(3)),
 			},
 		};
 	});

@@ -19,27 +19,27 @@ export function calculateRowsWithSumPlannedIndicators (rows: PlannedRowIndicator
 		// ===== ===== ===== ===== =====
 
 		'Расход УЕ': {
-			base: rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].base, 0),
-			plan: rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].plan, 0),
-			fact: rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].fact, 0),
+			base: Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].base, 0).toFixed(3)),
+			plan: Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].plan, 0).toFixed(3)),
+			fact: Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].fact, 0).toFixed(3)),
 		},
 
 		'ОВПЗ = П/Б': {
-			k: rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б'].k, 0),
-			'%': rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б']['‰'], 0),
-			'‰': rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б']['‰'], 0),
+			k: Number(rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б'].k, 0).toFixed(3)),
+			'%': Number(rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б']['‰'], 0).toFixed(3)),
+			'‰': Number(rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б']['‰'], 0).toFixed(3)),
 		},
 
 		'ОВВП = Ф/П': {
-			k: rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П'].k, 0),
-			'%': rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П']['‰'], 0),
-			'‰': rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П']['‰'], 0),
+			k: Number(rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П'].k, 0).toFixed(3)),
+			'%': Number(rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П']['‰'], 0).toFixed(3)),
+			'‰': Number(rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П']['‰'], 0).toFixed(3)),
 		},
 
 		'ОВФР = Ф/Б': {
-			k: rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б'].k, 0),
-			'%': rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б']['‰'], 0),
-			'‰': rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б']['‰'], 0),
+			k: Number(rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б'].k, 0).toFixed(3)),
+			'%': Number(rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б']['‰'], 0).toFixed(3)),
+			'‰': Number(rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б']['‰'], 0).toFixed(3)),
 		},
 	};
 
