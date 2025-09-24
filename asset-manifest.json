@@ -1,23 +1,25 @@
 {
   "files": {
     "main.css": "/economics/static/css/main.c42c3687.css",
-    "main.js": "/economics/static/js/main.e3106c4c.js",
-    "static/js/219.3ac083f7.chunk.js": "/economics/static/js/219.3ac083f7.chunk.js",
-    "static/js/843.bf822865.chunk.js": "/economics/static/js/843.bf822865.chunk.js",
+    "main.js": "/economics/static/js/main.c9b9179a.js",
+    "static/js/219.e16def54.chunk.js": "/economics/static/js/219.e16def54.chunk.js",
+    "static/js/843.aa8755e0.chunk.js": "/economics/static/js/843.aa8755e0.chunk.js",
     "static/js/103.33792c6f.chunk.js": "/economics/static/js/103.33792c6f.chunk.js",
     "static/js/453.f4f56800.chunk.js": "/economics/static/js/453.f4f56800.chunk.js",
-    "static/js/55.02834d3d.chunk.js": "/economics/static/js/55.02834d3d.chunk.js",
+    "static/js/123.edf5baa0.chunk.js": "/economics/static/js/123.edf5baa0.chunk.js",
+    "static/js/698.665acc16.chunk.js": "/economics/static/js/698.665acc16.chunk.js",
     "index.html": "/economics/index.html",
     "main.c42c3687.css.map": "/economics/static/css/main.c42c3687.css.map",
-    "main.e3106c4c.js.map": "/economics/static/js/main.e3106c4c.js.map",
-    "219.3ac083f7.chunk.js.map": "/economics/static/js/219.3ac083f7.chunk.js.map",
-    "843.bf822865.chunk.js.map": "/economics/static/js/843.bf822865.chunk.js.map",
+    "main.c9b9179a.js.map": "/economics/static/js/main.c9b9179a.js.map",
+    "219.e16def54.chunk.js.map": "/economics/static/js/219.e16def54.chunk.js.map",
+    "843.aa8755e0.chunk.js.map": "/economics/static/js/843.aa8755e0.chunk.js.map",
     "103.33792c6f.chunk.js.map": "/economics/static/js/103.33792c6f.chunk.js.map",
     "453.f4f56800.chunk.js.map": "/economics/static/js/453.f4f56800.chunk.js.map",
-    "55.02834d3d.chunk.js.map": "/economics/static/js/55.02834d3d.chunk.js.map"
+    "123.edf5baa0.chunk.js.map": "/economics/static/js/123.edf5baa0.chunk.js.map",
+    "698.665acc16.chunk.js.map": "/economics/static/js/698.665acc16.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c42c3687.css",
-    "static/js/main.e3106c4c.js"
+    "static/js/main.c9b9179a.js"
   ]
 }
