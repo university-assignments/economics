@@ -1,5 +1,5 @@
 import { Stack, styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
-import { useEffect, useMemo, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { calculateFullRowsPlannedIndicators } from 'src/pages/tests/planned-indicators/calculations/calculateFullRowsPlannedIndicators';
 import { calculateMiniRowsPlannedIndicators } from 'src/pages/tests/planned-indicators/calculations/calculateMiniRowsPlannedIndicators';
@@ -13,6 +13,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 	},
 }));
 
+function ReplaceArrayValue<TArrayValue> (callback: Dispatch<SetStateAction<TArrayValue[]>>, index: number, value: TArrayValue)
+{
+	callback(function (prevState)
+	{
+		return prevState.map(function (currentValue, currentIndex)
+		{
+			return index === currentIndex
+				? value
+				: currentValue;
+		});
+	});
+}
+
 export default function PlannedIndicatorsPage ()
 {
 	const [ searchParams, setSearchParams ] = useSearchParams();
@@ -25,8 +38,6 @@ export default function PlannedIndicatorsPage ()
 	const [ k, setK ] = useState(() => searchParams.get('k')?.split('|') || []);
 
 	const keys = [ fuel, units, base, plan, fact, k ];
-
-	const replaceArrayValue = (callback: Function, array: any[], index: number, value: string) => callback(array.map((v, i) => index === i ? value : v));
 
 	useEffect(
 		() => setSearchParams({
@@ -150,7 +161,7 @@ export default function PlannedIndicatorsPage ()
 											sx={{ minWidth: '100px' }}
 											label='Вид топлива'
 											value={row['Вид топлива']}
-											onChange={ (ev) => replaceArrayValue(setFuel, fuel, index, ev.target.value) }
+											onChange={ (ev) => ReplaceArrayValue(setFuel, index, ev.target.value) }
 										/>
 									</TableCell>
 
@@ -161,7 +172,7 @@ export default function PlannedIndicatorsPage ()
 													sx={{ minWidth: '100px' }}
 													label='Единицы измерения'
 													value={row['Единицы измерения']}
-													onChange={ (ev) => replaceArrayValue(setUnits, units, index, ev.target.value) }
+													onChange={ (ev) => ReplaceArrayValue(setUnits, index, ev.target.value) }
 												/>
 												: '-'
 										}
@@ -171,7 +182,7 @@ export default function PlannedIndicatorsPage ()
 									<TableCell sx={{ borderLeft: 1 }}>
 										{
 											typeof row['Расход Абс.'].base === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='База' value={row['Расход Абс.'].base} onChange={ (ev) => replaceArrayValue(setBase, base, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='База' value={row['Расход Абс.'].base} onChange={ (ev) => ReplaceArrayValue(setBase, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
@@ -179,7 +190,7 @@ export default function PlannedIndicatorsPage ()
 									<TableCell>
 										{
 											typeof row['Расход Абс.'].plan === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='План' value={row['Расход Абс.'].plan} onChange={ (ev) => replaceArrayValue(setPlan, plan, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='План' value={row['Расход Абс.'].plan} onChange={ (ev) => ReplaceArrayValue(setPlan, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
@@ -187,7 +198,7 @@ export default function PlannedIndicatorsPage ()
 									<TableCell>
 										{
 											typeof row['Расход Абс.'].fact === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='Факт' value={row['Расход Абс.'].fact} onChange={ (ev) => replaceArrayValue(setFact, fact, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='Факт' value={row['Расход Абс.'].fact} onChange={ (ev) => ReplaceArrayValue(setFact, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
@@ -196,7 +207,7 @@ export default function PlannedIndicatorsPage ()
 									<TableCell sx={{ borderLeft: 1 }}>
 										{
 											typeof row.k === 'number'
-												? <TextField sx={{ minWidth: '100px' }} type='number' label='К' value={row.k} onChange={ (ev) => replaceArrayValue(setK, k, index, ev.target.value) } />
+												? <TextField sx={{ minWidth: '100px' }} type='number' label='К' value={row.k} onChange={ (ev) => ReplaceArrayValue(setK, index, ev.target.value) } />
 												: '-'
 										}
 									</TableCell>
