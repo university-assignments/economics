@@ -4,11 +4,12 @@ import tseslint from 'typescript-eslint';
 import json from '@eslint/json';
 import markdown from '@eslint/markdown';
 import css from '@eslint/css';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import stylistic from '@stylistic/eslint-plugin';
 
 
 export default defineConfig([
+	globalIgnores([ 'build/**/*' ]),
 	{
 		files: [ '**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}' ],
 		plugins: { '@stylistic': stylistic },
