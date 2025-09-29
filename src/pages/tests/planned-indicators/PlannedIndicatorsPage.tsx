@@ -1,5 +1,4 @@
-import { Accordion, AccordionDetails, AccordionSummary, Stack, styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
-import { teal } from '@mui/material/colors';
+import { Box, Stack, styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
 import { Dispatch, SetStateAction, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { calculateFullRowsPlannedIndicators } from 'src/pages/tests/planned-indicators/calculations/calculateFullRowsPlannedIndicators';
@@ -244,33 +243,15 @@ export default function PlannedIndicatorsPage ()
 				</Table>
 			</TableContainer>
 
-			<Accordion defaultExpanded sx={{ bgcolor: teal[50] }}>
-				<AccordionSummary>
-					<Typography>Используемые формулы (переписывать НЕ нужно)</Typography>
-				</AccordionSummary>
-
-				<AccordionDetails>
-					<Typography sx={{ fontFamily: 'Consolas, sans-serif' }}>Расход УЕ = Расход Абс. / К</Typography>
-
-					<hr />
-
-					<ul>
-						<li style={{ fontFamily: 'Consolas, sans-serif' }}>ОВПЗ = (Расход Абс.) План / (Расход Абс.) База</li>
-						<li style={{ fontFamily: 'Consolas, sans-serif' }}>ОВВП = (Расход Абс.) Факт / (Расход Абс.) План</li>
-						<li style={{ fontFamily: 'Consolas, sans-serif' }}>ОВФР = (Расход Абс.) Факт / (Расход Абс.) База</li>
-					</ul>
-
-					<ul>
-						<li style={{ fontFamily: 'Consolas, sans-serif' }}>К = исходное значение</li>
-						<li style={{ fontFamily: 'Consolas, sans-serif' }}>% (процент) = К * 100</li>
-						<li style={{ fontFamily: 'Consolas, sans-serif' }}>‰ (промилле) = К * 1000</li>
-					</ul>
-
-					<hr />
-
-					<Typography sx={{ fontFamily: 'Consolas, sans-serif' }}>Удельный вес (%) = Расход Абс. / (Расход Абс.) Σ</Typography>
-				</AccordionDetails>
-			</Accordion>
+			<Box
+				sx={{
+					border: '3px dashed #ccc',
+					borderRadius: '10px',
+					p: 2,
+				}}
+			>
+				<a href='/economics/storage/tests/planned-indicators/economics-2.xlsx'>В формате EXCEL</a>
+			</Box>
 		</Stack>
 	);
 }

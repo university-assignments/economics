@@ -19,7 +19,7 @@ const SECTIONS = [
 		path: 'tests/2-planned-indicators',
 		search: new URLSearchParams({
 			fuel: [ 'МАЗ', 'Уголь', 'Газ' ].join('|'),
-			units: [ 'Т', 'Т', 'м^3' ].join('|'),
+			units: [ 'Т', 'Т', '1000 М^3' ].join('|'),
 			base: [ 550, 350, 650 ].join('|'),
 			plan: [ 500, 320, 650 ].join('|'),
 			fact: [ 520, 300, 690 ].join('|'),

@@ -4,6 +4,14 @@ import { PlannedRowsWithSumIndicators } from 'src/pages/tests/planned-indicators
 
 export function calculateRowsWithSumPlannedIndicators (rows: PlannedRowIndicatorMiniResponse[]): PlannedRowsWithSumIndicators
 {
+	const base = Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].base, 0).toFixed(3));
+	const plan = Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].plan, 0).toFixed(3));
+	const fact = Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].fact, 0).toFixed(3));
+
+	const parameter1 = Number((plan / base).toFixed(3));
+	const parameter2 = Number((fact / plan).toFixed(3));
+	const parameter3 = Number((fact / base).toFixed(3));
+
 	const sum = {
 		'Вид топлива': 'Σ',
 		'Единицы измерения': undefined,
@@ -19,27 +27,27 @@ export function calculateRowsWithSumPlannedIndicators (rows: PlannedRowIndicator
 		// ===== ===== ===== ===== =====
 
 		'Расход УЕ': {
-			base: Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].base, 0).toFixed(3)),
-			plan: Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].plan, 0).toFixed(3)),
-			fact: Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].fact, 0).toFixed(3)),
+			base,
+			plan,
+			fact,
 		},
 
 		'ОВПЗ = П/Б': {
-			k: Number(rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б'].k, 0).toFixed(3)),
-			'%': Number(rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б']['‰'], 0).toFixed(3)),
-			'‰': Number(rows.reduce((accumulator, row) => accumulator + row['ОВПЗ = П/Б']['‰'], 0).toFixed(3)),
+			k: parameter1,
+			'%': Number((parameter1 * 100).toFixed(3)),
+			'‰': Number((parameter1 * 1000).toFixed(3)),
 		},
 
 		'ОВВП = Ф/П': {
-			k: Number(rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П'].k, 0).toFixed(3)),
-			'%': Number(rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П']['‰'], 0).toFixed(3)),
-			'‰': Number(rows.reduce((accumulator, row) => accumulator + row['ОВВП = Ф/П']['‰'], 0).toFixed(3)),
+			k: parameter2,
+			'%': Number((parameter2 * 100).toFixed(3)),
+			'‰': Number((parameter2 * 1000).toFixed(3)),
 		},
 
 		'ОВФР = Ф/Б': {
-			k: Number(rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б'].k, 0).toFixed(3)),
-			'%': Number(rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б']['‰'], 0).toFixed(3)),
-			'‰': Number(rows.reduce((accumulator, row) => accumulator + row['ОВФР = Ф/Б']['‰'], 0).toFixed(3)),
+			k: parameter3,
+			'%': Number((parameter3 * 100).toFixed(3)),
+			'‰': Number((parameter3 * 1000).toFixed(3)),
 		},
 	};
 
