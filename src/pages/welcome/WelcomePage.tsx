@@ -1,9 +1,22 @@
-import { Link } from 'react-router';
+import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
+import { Fragment } from 'react';
+import { useNavigate } from 'react-router';
 
 
-const SECTIONS = [
+interface Section
+{
+	modified_at: Date;
+	title: string;
+
+	path: string;
+	search: URLSearchParams;
+}
+
+const SECTIONS: Section[] = [
 	{
+		modified_at: new Date('2025-09-18'),
 		title: 'Скорость обращения денег',
+
 		path: 'tests/1-velocity-of-money',
 		search: new URLSearchParams({
 			Q_0: '9043.8',
@@ -15,7 +28,9 @@ const SECTIONS = [
 		}),
 	},
 	{
+		modified_at: new Date('2025-09-29'),
 		title: 'Плановые показатели',
+
 		path: 'tests/2-planned-indicators',
 		search: new URLSearchParams({
 			fuel: [ 'МАЗ', 'Уголь', 'Газ' ].join('|'),
@@ -26,21 +41,39 @@ const SECTIONS = [
 			k: [ 1.37, 0.9, 1.2 ].join('|'),
 		}),
 	},
+	{
+		modified_at: new Date('2025-10-07'),
+		title: 'Индексы',
+
+		path: 'tests/3-indexes',
+		search: new URLSearchParams(),
+	},
 ];
 
 export default function WelcomePage ()
 {
+	const navigate = useNavigate();
+
 	return (
-		<ol>
+		<List>
 			{
-				SECTIONS.map((section) => (
-					<li key={section.path}>
-						<Link to={ section.path + '?' + section.search }>
-							{section.title}
-						</Link>
-					</li>
+				SECTIONS.map((section, index) => (
+					<Fragment key={section.path}>
+						<ListItem onClick={() => navigate(section.path + '?' + section.search)}>
+							<ListItemAvatar>
+								<Avatar sx={{ bgcolor: '#2196f3' }}>{index + 1}</Avatar>
+							</ListItemAvatar>
+
+							<ListItemText
+								primary={section.title}
+								secondary={ 'последнее изменение: ' + section.modified_at.toLocaleDateString() }
+							/>
+						</ListItem>
+
+						<Divider />
+					</Fragment>
 				))
 			}
-		</ol>
+		</List>
 	);
 }
