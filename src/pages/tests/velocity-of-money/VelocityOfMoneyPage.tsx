@@ -6,11 +6,11 @@ import { useSearchParams } from 'react-router';
 
 const D = 360;
 
-const calculateV = (Q: number, M: number) => Number((Q / M).toFixed(3));
-const calculateB = (Q: number, N: number) => Number((Q / N).toFixed(3));
-const calculateT = (D: number, V: number) => Number((D / V).toFixed(3));
-const calculateP = (D: number, B: number) => Number((D / B).toFixed(3));
-const calculateZ = (N: number, M: number) => Number((N / M).toFixed(3));
+const calculateV = (Q: number, M: number) => (Q / M).toFixedNumber(3);
+const calculateB = (Q: number, N: number) => (Q / N).toFixedNumber(3);
+const calculateT = (D: number, V: number) => (D / V).toFixedNumber(3);
+const calculateP = (D: number, B: number) => (D / B).toFixedNumber(3);
+const calculateZ = (N: number, M: number) => (N / M).toFixedNumber(3);
 
 export default function VelocityOfMoneyPage ()
 {
@@ -52,8 +52,8 @@ export default function VelocityOfMoneyPage ()
 	const Z_0 = calculateZ(N_0, M_0);
 	const Z_1 = calculateZ(N_1, M_1);
 
-	const X = (B_1 * Z_1 - B_0 * Z_1).toFixed(3);
-	const Y = (B_0 * Z_1 - B_0 * Z_0).toFixed(3);
+	const X = (B_1 * Z_1 - B_0 * Z_1).toFixedNumber(3);
+	const Y = (B_0 * Z_1 - B_0 * Z_0).toFixedNumber(3);
 
 	return (
 		<Stack spacing={2} sx={{ p: 2 }}>

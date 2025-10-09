@@ -8,35 +8,35 @@ export function calculateMiniRowsPlannedIndicators (rows: PlannedRowIndicatorDat
 	{
 		const main = row['Расход Абс.'];
 
-		const parameter1 = Number((main.plan / main.base).toFixed(3));
-		const parameter2 = Number((main.fact / main.plan).toFixed(3));
-		const parameter3 = Number((main.fact / main.base).toFixed(3));
+		const parameter1 = (main.plan / main.base).toFixedNumber(3);
+		const parameter2 = (main.fact / main.plan).toFixedNumber(3);
+		const parameter3 = (main.fact / main.base).toFixedNumber(3);
 
 		return {
 			...row,
 
 			'Расход УЕ': {
-				base: Number((main.base * row.k).toFixed(3)),
-				plan: Number((main.plan * row.k).toFixed(3)),
-				fact: Number((main.fact * row.k).toFixed(3)),
+				base: (main.base * row.k).toFixedNumber(3),
+				plan: (main.plan * row.k).toFixedNumber(3),
+				fact: (main.fact * row.k).toFixedNumber(3),
 			},
 
 			'ОВПЗ = П/Б': {
 				k: parameter1,
-				'%': Number((parameter1 * 100).toFixed(3)),
-				'‰': Number((parameter1 * 1000).toFixed(3)),
+				'%': (parameter1 * 100).toFixedNumber(3),
+				'‰': (parameter1 * 1000).toFixedNumber(3),
 			},
 
 			'ОВВП = Ф/П': {
 				k: parameter2,
-				'%': Number((parameter2 * 100).toFixed(3)),
-				'‰': Number((parameter2 * 1000).toFixed(3)),
+				'%': (parameter2 * 100).toFixedNumber(3),
+				'‰': (parameter2 * 1000).toFixedNumber(3),
 			},
 
 			'ОВФР = Ф/Б': {
 				k: parameter3,
-				'%': Number((parameter3 * 100).toFixed(3)),
-				'‰': Number((parameter3 * 1000).toFixed(3)),
+				'%': (parameter3 * 100).toFixedNumber(3),
+				'‰': (parameter3 * 1000).toFixedNumber(3),
 			},
 		};
 	});

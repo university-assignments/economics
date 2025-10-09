@@ -10,9 +10,9 @@ export function calculateFullRowsPlannedIndicators (rows: PlannedRowsWithSumIndi
 			...row,
 
 			'Удельный вес (%)': {
-				base: Number((row['Расход УЕ'].base / rows.sum['Расход УЕ'].base * 100).toFixed(3)),
-				plan: Number((row['Расход УЕ'].plan / rows.sum['Расход УЕ'].plan * 100).toFixed(3)),
-				fact: Number((row['Расход УЕ'].fact / rows.sum['Расход УЕ'].fact * 100).toFixed(3)),
+				base: (row['Расход УЕ'].base / rows.sum['Расход УЕ'].base * 100).toFixedNumber(3),
+				plan: (row['Расход УЕ'].plan / rows.sum['Расход УЕ'].plan * 100).toFixedNumber(3),
+				fact: (row['Расход УЕ'].fact / rows.sum['Расход УЕ'].fact * 100).toFixedNumber(3),
 			},
 		};
 	});

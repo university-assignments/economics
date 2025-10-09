@@ -4,13 +4,13 @@ import { PlannedRowsWithSumIndicators } from 'src/pages/tests/planned-indicators
 
 export function calculateRowsWithSumPlannedIndicators (rows: PlannedRowIndicatorMiniResponse[]): PlannedRowsWithSumIndicators
 {
-	const base = Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].base, 0).toFixed(3));
-	const plan = Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].plan, 0).toFixed(3));
-	const fact = Number(rows.reduce((accumulator, row) => accumulator + row['Расход УЕ'].fact, 0).toFixed(3));
+	const base = rows.map((row) => row['Расход УЕ'].base).sum(3);
+	const plan = rows.map((row) => row['Расход УЕ'].plan).sum(3);
+	const fact = rows.map((row) => row['Расход УЕ'].fact).sum(3);
 
-	const parameter1 = Number((plan / base).toFixed(3));
-	const parameter2 = Number((fact / plan).toFixed(3));
-	const parameter3 = Number((fact / base).toFixed(3));
+	const parameter1 = (plan / base).toFixedNumber(3);
+	const parameter2 = (fact / plan).toFixedNumber(3);
+	const parameter3 = (fact / base).toFixedNumber(3);
 
 	const sum = {
 		'Вид топлива': 'Σ',
@@ -34,20 +34,20 @@ export function calculateRowsWithSumPlannedIndicators (rows: PlannedRowIndicator
 
 		'ОВПЗ = П/Б': {
 			k: parameter1,
-			'%': Number((parameter1 * 100).toFixed(3)),
-			'‰': Number((parameter1 * 1000).toFixed(3)),
+			'%': (parameter1 * 100).toFixedNumber(3),
+			'‰': (parameter1 * 1000).toFixedNumber(3),
 		},
 
 		'ОВВП = Ф/П': {
 			k: parameter2,
-			'%': Number((parameter2 * 100).toFixed(3)),
-			'‰': Number((parameter2 * 1000).toFixed(3)),
+			'%': (parameter2 * 100).toFixedNumber(3),
+			'‰': (parameter2 * 1000).toFixedNumber(3),
 		},
 
 		'ОВФР = Ф/Б': {
 			k: parameter3,
-			'%': Number((parameter3 * 100).toFixed(3)),
-			'‰': Number((parameter3 * 1000).toFixed(3)),
+			'%': (parameter3 * 100).toFixedNumber(3),
+			'‰': (parameter3 * 1000).toFixedNumber(3),
 		},
 	};
 

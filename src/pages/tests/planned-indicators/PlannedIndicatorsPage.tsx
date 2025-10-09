@@ -68,9 +68,9 @@ export default function PlannedIndicatorsPage ()
 				...miniSum.sum,
 
 				'Удельный вес (%)': {
-					base: full.reduce((accumulator, row) => accumulator + row['Удельный вес (%)'].base, 0).toFixed(3),
-					plan: full.reduce((accumulator, row) => accumulator + row['Удельный вес (%)'].plan, 0).toFixed(3),
-					fact: full.reduce((accumulator, row) => accumulator + row['Удельный вес (%)'].fact, 0).toFixed(3),
+					base: full.map((row) => row['Удельный вес (%)'].base).sum(3),
+					plan: full.map((row) => row['Удельный вес (%)'].plan).sum(3),
+					fact: full.map((row) => row['Удельный вес (%)'].fact).sum(3),
 				},
 			};
 
