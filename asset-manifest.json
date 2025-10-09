@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/economics/static/css/main.c42c3687.css",
-    "main.js": "/economics/static/js/main.05fd735d.js",
+    "main.js": "/economics/static/js/main.f9f55424.js",
     "static/js/465.1b1c0a8f.chunk.js": "/economics/static/js/465.1b1c0a8f.chunk.js",
     "static/js/434.2ba72ccb.chunk.js": "/economics/static/js/434.2ba72ccb.chunk.js",
     "static/js/122.9b45ae79.chunk.js": "/economics/static/js/122.9b45ae79.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/272.f8b184d4.chunk.js": "/economics/static/js/272.f8b184d4.chunk.js",
     "index.html": "/economics/index.html",
     "main.c42c3687.css.map": "/economics/static/css/main.c42c3687.css.map",
-    "main.05fd735d.js.map": "/economics/static/js/main.05fd735d.js.map",
+    "main.f9f55424.js.map": "/economics/static/js/main.f9f55424.js.map",
     "465.1b1c0a8f.chunk.js.map": "/economics/static/js/465.1b1c0a8f.chunk.js.map",
     "434.2ba72ccb.chunk.js.map": "/economics/static/js/434.2ba72ccb.chunk.js.map",
     "122.9b45ae79.chunk.js.map": "/economics/static/js/122.9b45ae79.chunk.js.map",
@@ -24,6 +24,6 @@
   },
   "entrypoints": [
     "static/css/main.c42c3687.css",
-    "static/js/main.05fd735d.js"
+    "static/js/main.f9f55424.js"
   ]
 }
