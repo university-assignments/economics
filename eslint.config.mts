@@ -32,6 +32,7 @@ export default defineConfig([
 				arraysInObjects: false,
 				objectsInObjects: false,
 			}],
+			'@stylistic/operator-linebreak': [ 'error', 'before' ],
 			'@stylistic/padded-blocks': [ 'error', 'never' ],
 			'@stylistic/quote-props': [ 'error', 'as-needed' ],
 			'@stylistic/quotes': [ 'error', 'single' ],
