@@ -1,27 +1,29 @@
 {
   "files": {
     "main.css": "/economics/static/css/main.c42c3687.css",
-    "main.js": "/economics/static/js/main.96ea76b0.js",
-    "static/js/219.ae18d324.chunk.js": "/economics/static/js/219.ae18d324.chunk.js",
-    "static/js/434.61ddb87b.chunk.js": "/economics/static/js/434.61ddb87b.chunk.js",
-    "static/js/103.b1243edd.chunk.js": "/economics/static/js/103.b1243edd.chunk.js",
+    "main.js": "/economics/static/js/main.05fd735d.js",
+    "static/js/465.1b1c0a8f.chunk.js": "/economics/static/js/465.1b1c0a8f.chunk.js",
+    "static/js/434.2ba72ccb.chunk.js": "/economics/static/js/434.2ba72ccb.chunk.js",
+    "static/js/122.9b45ae79.chunk.js": "/economics/static/js/122.9b45ae79.chunk.js",
+    "static/js/580.a6dc44c1.chunk.js": "/economics/static/js/580.a6dc44c1.chunk.js",
     "static/js/453.f4f56800.chunk.js": "/economics/static/js/453.f4f56800.chunk.js",
     "static/js/246.fd8172a5.chunk.js": "/economics/static/js/246.fd8172a5.chunk.js",
     "static/js/700.3e5bd180.chunk.js": "/economics/static/js/700.3e5bd180.chunk.js",
-    "static/js/594.0cc22b76.chunk.js": "/economics/static/js/594.0cc22b76.chunk.js",
+    "static/js/272.f8b184d4.chunk.js": "/economics/static/js/272.f8b184d4.chunk.js",
     "index.html": "/economics/index.html",
     "main.c42c3687.css.map": "/economics/static/css/main.c42c3687.css.map",
-    "main.96ea76b0.js.map": "/economics/static/js/main.96ea76b0.js.map",
-    "219.ae18d324.chunk.js.map": "/economics/static/js/219.ae18d324.chunk.js.map",
-    "434.61ddb87b.chunk.js.map": "/economics/static/js/434.61ddb87b.chunk.js.map",
-    "103.b1243edd.chunk.js.map": "/economics/static/js/103.b1243edd.chunk.js.map",
+    "main.05fd735d.js.map": "/economics/static/js/main.05fd735d.js.map",
+    "465.1b1c0a8f.chunk.js.map": "/economics/static/js/465.1b1c0a8f.chunk.js.map",
+    "434.2ba72ccb.chunk.js.map": "/economics/static/js/434.2ba72ccb.chunk.js.map",
+    "122.9b45ae79.chunk.js.map": "/economics/static/js/122.9b45ae79.chunk.js.map",
+    "580.a6dc44c1.chunk.js.map": "/economics/static/js/580.a6dc44c1.chunk.js.map",
     "453.f4f56800.chunk.js.map": "/economics/static/js/453.f4f56800.chunk.js.map",
     "246.fd8172a5.chunk.js.map": "/economics/static/js/246.fd8172a5.chunk.js.map",
     "700.3e5bd180.chunk.js.map": "/economics/static/js/700.3e5bd180.chunk.js.map",
-    "594.0cc22b76.chunk.js.map": "/economics/static/js/594.0cc22b76.chunk.js.map"
+    "272.f8b184d4.chunk.js.map": "/economics/static/js/272.f8b184d4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c42c3687.css",
-    "static/js/main.96ea76b0.js"
+    "static/js/main.05fd735d.js"
   ]
 }
