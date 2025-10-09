@@ -33,7 +33,7 @@ const SECTIONS: Section[] = [
 
 		path: 'tests/2-planned-indicators',
 		search: new URLSearchParams({
-			fuel: [ 'МАЗ', 'Уголь', 'Газ' ].join('|'),
+			fuel: [ 'Мазут', 'Уголь', 'Газ' ].join('|'),
 			units: [ 'Т', 'Т', '1000 М^3' ].join('|'),
 			base: [ 550, 350, 650 ].join('|'),
 			plan: [ 500, 320, 650 ].join('|'),
@@ -46,7 +46,13 @@ const SECTIONS: Section[] = [
 		title: 'Индексы',
 
 		path: 'tests/3-indexes',
-		search: new URLSearchParams(),
+		search: new URLSearchParams({
+			products: [ 'A', 'B', 'C' ].join('|'),
+			releases1: [ 2500, 3000, 3600 ].join('|'),
+			releases2: [ 2610, 2950, 3700 ].join('|'),
+			prices1: [ 4800, 7100, 5000 ].join('|'),
+			prices2: [ 5400, 7600, 5700 ].join('|'),
+		}),
 	},
 ];
 
