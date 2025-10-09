@@ -1,4 +1,6 @@
 import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
+import { formatDistanceToNow } from 'date-fns';
+import { ru } from 'date-fns/locale';
 import { Fragment } from 'react';
 import { useNavigate } from 'react-router';
 
@@ -72,7 +74,10 @@ export default function WelcomePage ()
 
 							<ListItemText
 								primary={section.title}
-								secondary={ 'последнее изменение: ' + section.modified_at.toLocaleDateString() }
+								secondary={ 'последнее изменение: ' + formatDistanceToNow(section.modified_at, {
+									addSuffix: true,
+									locale: ru,
+								}) }
 							/>
 						</ListItem>
 
