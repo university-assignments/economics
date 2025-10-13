@@ -1,18 +1,13 @@
-import { Box, Stack, styled, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
+import { Box, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router';
+import { StyledTableRow } from 'src/components/table/StyledTableRow';
 import { calculateFullRowsPlannedIndicators } from 'src/pages/tests/planned-indicators/calculations/calculateFullRowsPlannedIndicators';
 import { calculateMiniRowsPlannedIndicators } from 'src/pages/tests/planned-indicators/calculations/calculateMiniRowsPlannedIndicators';
 import { calculateRowsWithSumPlannedIndicators } from 'src/pages/tests/planned-indicators/calculations/calculateRowsWithSumPlannedIndicators';
 import { PlannedRowIndicatorData } from 'src/pages/tests/planned-indicators/interfaces/PlannedRowIndicatorData';
 import { ReplaceArrayValue } from 'src/tools/ReplaceArrayValue';
 
-
-const StyledTableRow = styled(TableRow)(({ theme }) => ({
-	'&:nth-of-type(odd)': {
-		backgroundColor: theme.palette.action.hover,
-	},
-}));
 
 export default function PlannedIndicatorsPage ()
 {

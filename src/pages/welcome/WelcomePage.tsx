@@ -44,7 +44,7 @@ const SECTIONS: Section[] = [
 		}),
 	},
 	{
-		modified_at: new Date('2025-10-09'),
+		modified_at: new Date('2025-10-13 21:45:00'),
 		title: 'Индексы',
 
 		path: 'tests/3-indexes',
