@@ -56,6 +56,29 @@ const SECTIONS: Section[] = [
 			prices2: [ 5400, 7600, 5700 ].join('|'),
 		}),
 	},
+	{
+		modified_at: new Date('2025-10-27 21:18'),
+		title: 'Уровень жизни населения',
+
+		path: 'tests/4-standard-living-population',
+		search: new URLSearchParams({
+			P1: '75.3',
+			P2: '99',
+			P3: '89',
+			P4: '21983',
+
+			H1: '32',
+			H2: '25.1',
+			H31: '66',
+			H32: '17',
+			H33: '24',
+
+			N1: '9',
+			N2: '17',
+			N3: '12.9',
+			N4: '2.6',
+		}),
+	},
 ];
 
 export default function WelcomePage ()
