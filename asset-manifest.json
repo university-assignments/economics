@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/economics/static/css/main.c42c3687.css",
-    "main.js": "/economics/static/js/main.c4806a0b.js",
+    "main.js": "/economics/static/js/main.b50fd696.js",
     "static/js/465.90f8253c.chunk.js": "/economics/static/js/465.90f8253c.chunk.js",
     "static/js/843.f89bd8fe.chunk.js": "/economics/static/js/843.f89bd8fe.chunk.js",
     "static/js/122.387c25d4.chunk.js": "/economics/static/js/122.387c25d4.chunk.js",
     "static/js/103.111ec79a.chunk.js": "/economics/static/js/103.111ec79a.chunk.js",
-    "static/js/926.f4d22ec5.chunk.js": "/economics/static/js/926.f4d22ec5.chunk.js",
+    "static/js/926.8b7160f2.chunk.js": "/economics/static/js/926.8b7160f2.chunk.js",
     "static/js/453.f4f56800.chunk.js": "/economics/static/js/453.f4f56800.chunk.js",
     "static/js/246.fd8172a5.chunk.js": "/economics/static/js/246.fd8172a5.chunk.js",
     "static/js/700.3e5bd180.chunk.js": "/economics/static/js/700.3e5bd180.chunk.js",
@@ -14,12 +14,12 @@
     "static/js/873.fb00f001.chunk.js": "/economics/static/js/873.fb00f001.chunk.js",
     "index.html": "/economics/index.html",
     "main.c42c3687.css.map": "/economics/static/css/main.c42c3687.css.map",
-    "main.c4806a0b.js.map": "/economics/static/js/main.c4806a0b.js.map",
+    "main.b50fd696.js.map": "/economics/static/js/main.b50fd696.js.map",
     "465.90f8253c.chunk.js.map": "/economics/static/js/465.90f8253c.chunk.js.map",
     "843.f89bd8fe.chunk.js.map": "/economics/static/js/843.f89bd8fe.chunk.js.map",
     "122.387c25d4.chunk.js.map": "/economics/static/js/122.387c25d4.chunk.js.map",
     "103.111ec79a.chunk.js.map": "/economics/static/js/103.111ec79a.chunk.js.map",
-    "926.f4d22ec5.chunk.js.map": "/economics/static/js/926.f4d22ec5.chunk.js.map",
+    "926.8b7160f2.chunk.js.map": "/economics/static/js/926.8b7160f2.chunk.js.map",
     "453.f4f56800.chunk.js.map": "/economics/static/js/453.f4f56800.chunk.js.map",
     "246.fd8172a5.chunk.js.map": "/economics/static/js/246.fd8172a5.chunk.js.map",
     "700.3e5bd180.chunk.js.map": "/economics/static/js/700.3e5bd180.chunk.js.map",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.c42c3687.css",
-    "static/js/main.c4806a0b.js"
+    "static/js/main.b50fd696.js"
   ]
 }
