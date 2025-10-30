@@ -1,10 +1,17 @@
-import { Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
+import { Stack, Table, TableBody, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
 import { MathJax, MathJaxContext } from 'better-react-mathjax';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router';
 import { StyledTableCell } from 'src/components/table/StyledTableCell';
 import { StyledTableRow } from 'src/components/table/StyledTableRow';
 
+
+interface InputProps
+{
+	key: string;
+	onChange: (value: number) => void;
+	value: number;
+}
 
 const ln = (val: number) => Math.log(val);
 
@@ -75,43 +82,153 @@ export default function StandardLivingPopulationPage ()
 
 	const inn2 = calc_inn2(n1, n2, n3, n4);
 
+	const inputs: Record<'P' | 'H' | 'N', InputProps[]> = {
+		P: [
+			{
+				key: 'P1 (лет)',
+				onChange: setP1,
+				value: p1,
+			},
+			{
+				key: 'P2 (%)',
+				onChange: setP2,
+				value: p2,
+			},
+			{
+				key: 'P3 (%)',
+				onChange: setP3,
+				value: p3,
+			},
+			{
+				key: 'P4 ($)',
+				onChange: setP4,
+				value: p4,
+			},
+		],
+
+		H: [
+			{
+				key: 'H1',
+				onChange: setH1,
+				value: h1,
+			},
+			{
+				key: 'H2',
+				onChange: setH2,
+				value: h2,
+			},
+			{
+				key: 'H31',
+				onChange: setH31,
+				value: h31,
+			},
+			{
+				key: 'H32',
+				onChange: setH32,
+				value: h32,
+			},
+			{
+				key: 'H33',
+				onChange: setH33,
+				value: h33,
+			},
+		],
+
+		N: [
+			{
+				key: 'N1',
+				onChange: setN1,
+				value: n1,
+			},
+			{
+				key: 'N2',
+				onChange: setN2,
+				value: n2,
+			},
+			{
+				key: 'N3',
+				onChange: setN3,
+				value: n3,
+			},
+			{
+				key: 'N4',
+				onChange: setN4,
+				value: n4,
+			},
+		],
+	};
+
 	return (
 		<MathJaxContext>
 			<Stack spacing={2} p={2}>
 				<Typography variant='h4'>Контрольная работа №4 "Уровень жизни населения"</Typography>
 
-				<Stack spacing={2}>
-					<Stack direction='row' spacing={2}>
-						<TextField label='P₁ (лет)' type='number' value={p1} onChange={(e) => setP1(Number(e.target.value))} />
-						<TextField label='P₂ (%)' type='number' value={p2} onChange={(e) => setP2(Number(e.target.value))} />
-						<TextField label='P₃ (%)' type='number' value={p3} onChange={(e) => setP3(Number(e.target.value))} />
-						<TextField label='P₄ ($)' type='number' value={p4} onChange={(e) => setP4(Number(e.target.value))} />
-					</Stack>
+				<TableContainer>
+					<Table>
+						<TableHead>
+							<TableRow>
+								<StyledTableCell colSpan={2}>ИРИП</StyledTableCell>
+								<StyledTableCell colSpan={2}>ИНН</StyledTableCell>
+								<StyledTableCell colSpan={2}>ИNN</StyledTableCell>
+							</TableRow>
 
-					<Stack direction='row' spacing={2}>
-						<TextField label='H₁' type='number' value={h1} onChange={(e) => setH1(Number(e.target.value))} />
-						<TextField label='H₂' type='number' value={h2} onChange={(e) => setH2(Number(e.target.value))} />
-						<TextField label='H₃₁' type='number' value={h31} onChange={(e) => setH31(Number(e.target.value))} />
-						<TextField label='H₃₂' type='number' value={h32} onChange={(e) => setH32(Number(e.target.value))} />
-						<TextField label='H₃₃' type='number' value={h33} onChange={(e) => setH33(Number(e.target.value))} />
-					</Stack>
+							<TableRow>
+								<StyledTableCell></StyledTableCell>
+								<StyledTableCell>P факт</StyledTableCell>
 
-					<Stack direction='row' spacing={2}>
-						<TextField label='N₁' type='number' value={n1} onChange={(e) => setN1(Number(e.target.value))} />
-						<TextField label='N₂' type='number' value={n2} onChange={(e) => setN2(Number(e.target.value))} />
-						<TextField label='N₃' type='number' value={n3} onChange={(e) => setN3(Number(e.target.value))} />
-						<TextField label='N₄' type='number' value={n4} onChange={(e) => setN4(Number(e.target.value))} />
-					</Stack>
-				</Stack>
+								<StyledTableCell></StyledTableCell>
+								<StyledTableCell>H факт</StyledTableCell>
+
+								<StyledTableCell></StyledTableCell>
+								<StyledTableCell>N факт</StyledTableCell>
+							</TableRow>
+						</TableHead>
+
+						<TableBody>
+							{
+								Array.from({ length: 5 }).map((_, index) => (
+									<StyledTableRow>
+										<StyledTableCell>{ inputs.P[index]?.key }</StyledTableCell>
+										<StyledTableCell>
+											{
+												typeof inputs.P[index] === 'object'
+													? <TextField sx={{ minWidth: '150px' }} type='number' onChange={(ev) => inputs.P[index].onChange(Number(ev.target.value))} value={inputs.P[index].value} />
+													: ''
+											}
+										</StyledTableCell>
+
+										<StyledTableCell>{ inputs.H[index]?.key }</StyledTableCell>
+										<StyledTableCell>
+											{
+												typeof inputs.H[index] === 'object'
+													? <TextField sx={{ minWidth: '150px' }} type='number' onChange={(ev) => inputs.H[index].onChange(Number(ev.target.value))} value={inputs.H[index].value} />
+													: ''
+											}
+										</StyledTableCell>
+
+										<StyledTableCell>{ inputs.N[index]?.key }</StyledTableCell>
+										<StyledTableCell>
+											{
+												typeof inputs.N[index] === 'object'
+													? <TextField sx={{ minWidth: '150px' }} type='number' onChange={(ev) => inputs.N[index].onChange(Number(ev.target.value))} value={inputs.N[index].value} />
+													: ''
+											}
+										</StyledTableCell>
+									</StyledTableRow>
+								))
+							}
+						</TableBody>
+					</Table>
+				</TableContainer>
 
 				<TableContainer>
 					<Table>
 						<TableHead>
 							<TableRow>
-								<TableCell></TableCell>
-								<TableCell>Ед. Изм.</TableCell>
-								<TableCell>P min</TableCell>
-								<TableCell>P max</TableCell>
+								<StyledTableCell></StyledTableCell>
+								<StyledTableCell>Ед. Изм.</StyledTableCell>
+								<StyledTableCell>P min</StyledTableCell>
+								<StyledTableCell>P max</StyledTableCell>
 							</TableRow>
 						</TableHead>
 
@@ -147,32 +264,34 @@ export default function StandardLivingPopulationPage ()
 					</Table>
 				</TableContainer>
 
-				<Stack direction='row' spacing={2}>
-					<Typography variant='h6'>1)</Typography>
+				<Stack spacing={2} sx={{ overflowX: 'auto' }}>
+					<Stack direction='row' spacing={2}>
+						<Typography variant='h6'>1)</Typography>
 
-					<Stack spacing={1} mt={2}>
-						<MathJax dynamic>{ `\\(i(P_1) = \\frac{P1(Ф) - P1(min)}{P1(max) - P1(min)} = \\frac{${p1}-25}{85-25} = \\frac{${p1 - 25}}{60} = ${ip1}\\)` }</MathJax>
-						<MathJax dynamic>{ `\\(i(P_2) = \\frac{P2(Ф) - P2(min)}{P2(max) - P2(min)} = \\frac{${p2}-0}{100-0} = ${ip2}\\)` }</MathJax>
-						<MathJax dynamic>{ `\\(i(P_3) = \\frac{P3(Ф) - P3(min)}{P3(max) - P3(min)} = \\frac{${p3}-0}{100-0} = ${ip3}\\)` }</MathJax>
-						<MathJax dynamic>{ `\\(i(обр) = \\frac{2 * i(P2) + i(P3)}{3} = \\frac{2 * ${ip2} + ${ip3}}{3} = ${iobr}\\)`}</MathJax>
-						<MathJax dynamic>{ `\\(i(P_4) = \\frac{P4(Ф) - P4(min)}{P4(max) - P4(min)} = \\frac{\\ln ${p4} - \\ln 100}{\\ln 40000 - \\ln 100} = ${ip4}\\)` }</MathJax>
-						<MathJax dynamic>{ `\\(ИРИП = \\frac{i(P1) + i(обр) + i(p4)}{3} = \\frac{${ip1} + ${iobr} + ${ip4}}{3} = \\boxed{${irip}}\\)` }</MathJax>
+						<Stack spacing={1} mt={2}>
+							<MathJax dynamic>{ `\\(i(P_1) = \\frac{P1(Ф) - P1(min)}{P1(max) - P1(min)} = \\frac{${p1}-25}{85-25} = \\frac{${p1 - 25}}{60} = ${ip1}\\)` }</MathJax>
+							<MathJax dynamic>{ `\\(i(P_2) = \\frac{P2(Ф) - P2(min)}{P2(max) - P2(min)} = \\frac{${p2}-0}{100-0} = ${ip2}\\)` }</MathJax>
+							<MathJax dynamic>{ `\\(i(P_3) = \\frac{P3(Ф) - P3(min)}{P3(max) - P3(min)} = \\frac{${p3}-0}{100-0} = ${ip3}\\)` }</MathJax>
+							<MathJax dynamic>{ `\\(i(обр) = \\frac{2 * i(P2) + i(P3)}{3} = \\frac{2 * ${ip2} + ${ip3}}{3} = ${iobr}\\)`}</MathJax>
+							<MathJax dynamic>{ `\\(i(P_4) = \\frac{P4(Ф) - P4(min)}{P4(max) - P4(min)} = \\frac{\\ln ${p4} - \\ln 100}{\\ln 40000 - \\ln 100} = ${ip4}\\)` }</MathJax>
+							<MathJax dynamic>{ `\\(ИРИП = \\frac{i(P1) + i(обр) + i(p4)}{3} = \\frac{${ip1} + ${iobr} + ${ip4}}{3} = \\boxed{${irip}}\\)` }</MathJax>
+						</Stack>
 					</Stack>
-				</Stack>
 
-				<Stack direction='row' spacing={2}>
-					<Typography variant='h6'>2)</Typography>
+					<Stack direction='row' spacing={2}>
+						<Typography variant='h6'>2)</Typography>
 
-					<Stack spacing={1} mt={2}>
-						<MathJax dynamic>{ `\\(H_3 = \\frac{H_{31} + H_{32} + H_{33}}{3} = \\frac{${h31} + ${h32} + ${h33}}{3} = ${h3}\\)` }</MathJax>
-						<MathJax dynamic>{ `\\(ИНН(1) = (\\frac{M_1^3 + M_2^3 + M_3^3}{3})^{\\frac{1}{3}} = \\sqrt[3]{\\frac{${h1}^3 + ${h2}^3 + ${h3}^3}{3}} = \\boxed{${inn1}\\%}\\)` }</MathJax>
+						<Stack spacing={1} mt={2}>
+							<MathJax dynamic>{ `\\(H_3 = \\frac{H_{31} + H_{32} + H_{33}}{3} = \\frac{${h31} + ${h32} + ${h33}}{3} = ${h3}\\)` }</MathJax>
+							<MathJax dynamic>{ `\\(ИНН(1) = (\\frac{M_1^3 + M_2^3 + M_3^3}{3})^{\\frac{1}{3}} = \\sqrt[3]{\\frac{${h1}^3 + ${h2}^3 + ${h3}^3}{3}} = \\boxed{${inn1}\\%}\\)` }</MathJax>
+						</Stack>
 					</Stack>
-				</Stack>
 
-				<Stack direction='row' spacing={2}>
-					<Typography variant='h6'>3)</Typography>
+					<Stack direction='row' spacing={2}>
+						<Typography variant='h6'>3)</Typography>
 
-					<MathJax dynamic>{ `\\(ИНН(2) = (\\frac{N_1^3 + N_2^3 + N_3^3 + N_4^3}{4})^{\\frac{1}{3}} = \\sqrt[3]{\\frac{${n1}^3 + ${n2}^3 + ${n3}^3 + ${n4}^3}{4}} = \\boxed{${inn2}\\%}\\)` }</MathJax>
+						<MathJax dynamic>{ `\\(ИНН(2) = (\\frac{N_1^3 + N_2^3 + N_3^3 + N_4^3}{4})^{\\frac{1}{3}} = \\sqrt[3]{\\frac{${n1}^3 + ${n2}^3 + ${n3}^3 + ${n4}^3}{4}} = \\boxed{${inn2}\\%}\\)` }</MathJax>
+					</Stack>
 				</Stack>
 			</Stack>
 		</MathJaxContext>
