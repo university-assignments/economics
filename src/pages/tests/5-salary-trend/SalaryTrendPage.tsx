@@ -34,7 +34,7 @@ export default function SalaryTrendPage ()
 			x: parametersX.join('|'),
 			t: parametersT.join('|'),
 		}),
-		[ parametersX, parametersT ],
+		[ setSearchParams, parametersX, parametersT ],
 	);
 
 	const tableRows = useMemo(
@@ -72,7 +72,7 @@ export default function SalaryTrendPage ()
 			...row,
 			Y: (a0 + a1 * row.t).toFixedNumber(3),
 		})),
-		[ tableRows ],
+		[ tableRows, a0, a1 ],
 	);
 
 	const sumY = useMemo(() => tableRowsWithY.map((v) => v.Y).sum(3), [ tableRowsWithY ]);
