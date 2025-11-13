@@ -79,6 +79,16 @@ const SECTIONS: Section[] = [
 			N4: '2.6',
 		}),
 	},
+	{
+		modified_at: new Date('2025-11-13 18:55'),
+		title: 'Тренд заработной платы',
+
+		path: 'tests/5-salary-trend',
+		search: new URLSearchParams({
+			x: [ '31', '18', '26', '16', '26', '45', '29', '34', '31', '35', '33', '48' ].join('|'),
+			t: [ '-6', '-5', '-4', '-3', '-2', '-1', '1', '2', '3', '4', '5', '6' ].join('|'),
+		}),
+	},
 ];
 
 export default function WelcomePage ()
