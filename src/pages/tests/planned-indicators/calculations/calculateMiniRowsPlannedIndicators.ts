@@ -21,7 +21,7 @@ export function calculateMiniRowsPlannedIndicators (rows: PlannedRowIndicatorDat
 				fact: (main.fact * row.k).toFixedNumber(3),
 			},
 
-			'ОВПЗ = П/Б': {
+			'РВПЗ = П/Б': {
 				k: parameter1,
 				'%': (parameter1 * 100).toFixedNumber(3),
 				'‰': (parameter1 * 1000).toFixedNumber(3),

@@ -32,7 +32,7 @@ export function calculateRowsWithSumPlannedIndicators (rows: PlannedRowIndicator
 			fact,
 		},
 
-		'ОВПЗ = П/Б': {
+		'РВПЗ = П/Б': {
 			k: parameter1,
 			'%': (parameter1 * 100).toFixedNumber(3),
 			'‰': (parameter1 * 1000).toFixedNumber(3),

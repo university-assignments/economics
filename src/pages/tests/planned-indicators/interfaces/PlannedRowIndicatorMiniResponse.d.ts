@@ -10,7 +10,7 @@ export interface PlannedRowIndicatorMiniResponse
 		fact: number;
 	};
 
-	'ОВПЗ = П/Б': {
+	'РВПЗ = П/Б': {
 		k: number;
 		'%': number;
 		'‰': number;

@@ -87,7 +87,7 @@ export default function PlannedIndicatorsPage ()
 							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>Расход Абс.</TableCell>
 							<TableCell sx={{ borderLeft: 1 }} colSpan={1}>К</TableCell>
 							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>Расход УЕ</TableCell>
-							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>ОВПЗ = П/Б</TableCell>
+							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>РВПЗ = П/Б</TableCell>
 							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>ОВВП = Ф/П</TableCell>
 							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>ОВФР = Ф/Б</TableCell>
 							<TableCell sx={{ borderLeft: 1 }} colSpan={3}>Удельный вес (%)</TableCell>
@@ -113,7 +113,7 @@ export default function PlannedIndicatorsPage ()
 							<TableCell>План</TableCell>
 							<TableCell>Факт</TableCell>
 
-							{ /* ОВПЗ = П/Б */ }
+							{ /* РВПЗ = П/Б */ }
 							<TableCell sx={{ borderLeft: 1 }}>К</TableCell>
 							<TableCell>%</TableCell>
 							<TableCell>‰</TableCell>
@@ -200,10 +200,10 @@ export default function PlannedIndicatorsPage ()
 									<TableCell>{row['Расход УЕ'].plan}</TableCell>
 									<TableCell>{row['Расход УЕ'].fact}</TableCell>
 
-									{ /* ОВПЗ = П/Б */ }
-									<TableCell sx={{ borderLeft: 1 }}>{row['ОВПЗ = П/Б'].k}</TableCell>
-									<TableCell>{row['ОВПЗ = П/Б']['%']}</TableCell>
-									<TableCell>{row['ОВПЗ = П/Б']['‰']}</TableCell>
+									{ /* РВПЗ = П/Б */ }
+									<TableCell sx={{ borderLeft: 1 }}>{row['РВПЗ = П/Б'].k}</TableCell>
+									<TableCell>{row['РВПЗ = П/Б']['%']}</TableCell>
+									<TableCell>{row['РВПЗ = П/Б']['‰']}</TableCell>
 
 									{ /* ОВВП = Ф/П */ }
 									<TableCell sx={{ borderLeft: 1 }}>{row['ОВВП = Ф/П'].k}</TableCell>
