@@ -80,7 +80,7 @@ const SECTIONS: Section[] = [
 		}),
 	},
 	{
-		modified_at: new Date('2025-11-13 18:55'),
+		modified_at: new Date('2025-11-13 20:20'),
 		title: 'Тренд заработной платы',
 
 		path: 'tests/5-salary-trend',

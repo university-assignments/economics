@@ -1,6 +1,8 @@
-import { Stack, Table, TableBody, TableContainer, TableHead, TableRow, TextField } from '@mui/material';
+import 'chart.js/auto';
+import { Stack, Table, TableBody, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
 import { MathJax, MathJaxContext } from 'better-react-mathjax';
 import { useEffect, useMemo, useState } from 'react';
+import { Line } from 'react-chartjs-2';
 import { useSearchParams } from 'react-router';
 import { StyledTableCell } from 'src/components/table/StyledTableCell';
 import { StyledTableRow } from 'src/components/table/StyledTableRow';
@@ -76,7 +78,9 @@ export default function SalaryTrendPage ()
 	const sumY = useMemo(() => tableRowsWithY.map((v) => v.Y).sum(3), [ tableRowsWithY ]);
 
 	return (
-		<Stack spacing={2}>
+		<Stack spacing={2} marginY={2}>
+			<Typography variant='h4' paddingX={2}>Контрольная работа №5 "Тренд заработной платы"</Typography>
+
 			<TableContainer>
 				<Table>
 					<TableHead>
@@ -118,10 +122,68 @@ export default function SalaryTrendPage ()
 
 			<Stack spacing={2} paddingX={2}>
 				<MathJaxContext key={ parametersX.join('|') + parametersT.join('|') }>
+					<MathJax>
+						{
+							'\\('
+							+ '\\begin{cases}'
+							+ 'n a_0 + a_1 \\sum (t) = \\sum (x)'
+							+ '\\\\'
+							+ 'a_0 \\sum (t) + a_1 \\sum (t^2) = \\sum (xt)'
+							+ '\\end{cases}'
+							+ '\\)'
+						}
+					</MathJax>
+
+					<MathJax>{ '\\(\\sum (t) = 0\\)' }</MathJax>
+
+					<MathJax>
+						{
+							'\\('
+							+ '\\begin{cases}'
+							+ 'n a_0 = \\sum (x)'
+							+ '\\\\'
+							+ 'a_1 \\sum (t^2) = \\sum (xt)'
+							+ '\\end{cases}'
+							+ '\\)'
+						}
+					</MathJax>
+
 					<MathJax>{ `\\(a_0 = \\frac{\\sum (x)}{n} = \\frac{${tableSum.x}}{${N}} = ${a0} \\)` }</MathJax>
 					<MathJax>{ `\\(a_1 = \\frac{\\sum (xt)}{\\sum (t^2)} = \\frac{${tableSum.xt}}{${tableSum.t2}} = ${a1} \\)` }</MathJax>
+
+					<MathJax>{ `\\(Y = a_0 + a_1 t = ${a0} + ${a1} t\\)` }</MathJax>
 				</MathJaxContext>
+
+				<Typography
+					component='blockquote'
+					paddingX={2}
+					paddingY={1}
+					borderLeft='10px solid #0060ff'
+					borderRadius={2}
+				>
+					<Typography variant='h6' color='info'>[ ПРИМЕЧАНИЕ ]</Typography>
+
+					Для графика (на бумаге):
+					<br /> + Шаг сетки по y/высоте/вертикали составляет <Typography component='span' color='primary'>2 см (4 клетки)</Typography>.
+					<br /> + Шаг сетки по x/ширине/горизонтали составляет <Typography component='span' color='primary'>1 см (2 клетки)</Typography>.
+				</Typography>
 			</Stack>
+
+			<Line
+				data={{
+					labels: tableRows.map((_, i) => i + 1),
+					datasets: [
+						{
+							label: 'x',
+							data: tableRowsWithY.map((v) => v.x),
+						},
+						{
+							label: 'Y',
+							data: tableRowsWithY.map((v) => v.Y),
+						},
+					],
+				}}
+			/>
 		</Stack>
 	);
 }
