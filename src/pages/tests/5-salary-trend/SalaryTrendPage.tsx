@@ -6,7 +6,7 @@ import { Line } from 'react-chartjs-2';
 import { useSearchParams } from 'react-router';
 import { StyledTableCell } from 'src/components/table/StyledTableCell';
 import { StyledTableRow } from 'src/components/table/StyledTableRow';
-import { ReplaceArrayValue } from 'src/tools/ReplaceArrayValue';
+import { replaceArrayValue } from 'src/tools/replaceArrayValue';
 
 
 // Количество месяцев в году.
@@ -99,8 +99,8 @@ export default function SalaryTrendPage ()
 							tableRowsWithY.map((row, index) => (
 								<StyledTableRow key={row.M}>
 									<StyledTableCell>{row.M}</StyledTableCell>
-									<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={ (ev) => ReplaceArrayValue(setParametersX, index, Number(ev.target.value)) } value={row.x} /></StyledTableCell>
-									<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={ (ev) => ReplaceArrayValue(setParametersT, index, Number(ev.target.value)) } value={row.t} /></StyledTableCell>
+									<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={ (ev) => replaceArrayValue(setParametersX, index, Number(ev.target.value)) } value={row.x} /></StyledTableCell>
+									<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={ (ev) => replaceArrayValue(setParametersT, index, Number(ev.target.value)) } value={row.t} /></StyledTableCell>
 									<StyledTableCell>{row.t2}</StyledTableCell>
 									<StyledTableCell>{row.xt}</StyledTableCell>
 									<StyledTableCell>{row.Y}</StyledTableCell>

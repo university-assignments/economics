@@ -6,7 +6,7 @@ import { getPercentFormat } from 'src/components/percentages/getPercentFormat';
 import { PercentageFormat } from 'src/components/percentages/PercentageFormat';
 import { StyledTableCell } from 'src/components/table/StyledTableCell';
 import { StyledTableRow } from 'src/components/table/StyledTableRow';
-import { ReplaceArrayValue } from 'src/tools/ReplaceArrayValue';
+import { replaceArrayValue } from 'src/tools/replaceArrayValue';
 
 
 export default function IndexesPage ()
@@ -121,15 +121,15 @@ export default function IndexesPage ()
 							{
 								rows.map((row, index) => (
 									<StyledTableRow key={row.product}>
-										<StyledTableCell><TextField sx={{ minWidth: '100px' }} onChange={(ev) => ReplaceArrayValue(setProducts, index, ev.target.value)} value={row.product} /></StyledTableCell>
+										<StyledTableCell><TextField sx={{ minWidth: '100px' }} onChange={(ev) => replaceArrayValue(setProducts, index, ev.target.value)} value={row.product} /></StyledTableCell>
 
 										{ /* Выпуск */ }
-										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => ReplaceArrayValue(setReleases1, index, ev.target.value)} value={row.release1} /></StyledTableCell>
-										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => ReplaceArrayValue(setReleases2, index, ev.target.value)} value={row.release2} /></StyledTableCell>
+										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => replaceArrayValue(setReleases1, index, ev.target.value)} value={row.release1} /></StyledTableCell>
+										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => replaceArrayValue(setReleases2, index, ev.target.value)} value={row.release2} /></StyledTableCell>
 
 										{ /* Выпуск */ }
-										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => ReplaceArrayValue(setPrices1, index, ev.target.value)} value={row.price1} /></StyledTableCell>
-										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => ReplaceArrayValue(setPrices2, index, ev.target.value)} value={row.price2} /></StyledTableCell>
+										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => replaceArrayValue(setPrices1, index, ev.target.value)} value={row.price1} /></StyledTableCell>
+										<StyledTableCell><TextField sx={{ minWidth: '100px' }} type='number' onChange={(ev) => replaceArrayValue(setPrices2, index, ev.target.value)} value={row.price2} /></StyledTableCell>
 
 										{ /* i_q */ }
 										<StyledTableCell>

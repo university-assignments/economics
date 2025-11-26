@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
 
-export function ReplaceArrayValue<TArrayValue> (callback: Dispatch<SetStateAction<TArrayValue[]>>, index: number, value: TArrayValue)
+export function replaceArrayValue<TArrayValue> (callback: Dispatch<SetStateAction<TArrayValue[]>>, index: number, value: TArrayValue)
 {
 	callback(function (prevState)
 	{
