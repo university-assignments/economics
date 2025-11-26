@@ -85,8 +85,8 @@ const SECTIONS: Section[] = [
 
 		path: 'tests/5-salary-trend',
 		search: new URLSearchParams({
-			x: [ '31', '18', '26', '16', '26', '45', '29', '34', '31', '35', '33', '48' ].join('|'),
-			t: [ '-6', '-5', '-4', '-3', '-2', '-1', '1', '2', '3', '4', '5', '6' ].join('|'),
+			x: [ 31, 18, 26, 16, 26, 45, 29, 34, 31, 35, 33, 48 ].join('|'),
+			t: [ -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6 ].join('|'),
 		}),
 	},
 ];
@@ -107,7 +107,7 @@ export default function WelcomePage ()
 
 							<ListItemText
 								primary={section.title}
-								secondary={ 'последнее изменение: ' + formatDistanceToNow(section.modified_at, {
+								secondary={ 'изменено ' + formatDistanceToNow(section.modified_at, {
 									addSuffix: true,
 									locale: ru,
 								}) }
