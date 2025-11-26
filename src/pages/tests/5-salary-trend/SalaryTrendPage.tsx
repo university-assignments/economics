@@ -26,8 +26,8 @@ export default function SalaryTrendPage ()
 {
 	const [ searchParams, setSearchParams ] = useSearchParams();
 
-	const [ parametersX, setParametersX ] = useState(() => (searchParams.get('x') ?? '').split('|').map((value) => Number(value)));
-	const [ parametersT, setParametersT ] = useState(() => (searchParams.get('t') ?? '').split('|').map((value) => Number(value)));
+	const [ parametersX, setParametersX ] = useState(() => (searchParams.get('x') ?? '').split('|').map(Number));
+	const [ parametersT, setParametersT ] = useState(() => (searchParams.get('t') ?? '').split('|').map(Number));
 
 	useEffect(
 		() => setSearchParams({
