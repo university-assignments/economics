@@ -1,10 +1,11 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router';
-const VelocityOfMoneyPage = lazy(() => import('src/pages/tests/velocity-of-money/VelocityOfMoneyPage'));
-const PlannedIndicatorsPage = lazy(() => import('src/pages/tests/planned-indicators/PlannedIndicatorsPage'));
-const IndexesPage = lazy(() => import('src/pages/tests/3-indexes/IndexesPage'));
-const StandardLivingPopulationPage = lazy(() => import('src/pages/tests/4-standard-living-population/StandardLivingPopulationPage'));
-const SalaryTrendPage = lazy(() => import('src/pages/tests/5-salary-trend/SalaryTrendPage'));
+
+/* 1 */ const VelocityOfMoneyPage = lazy(() => import('src/pages/tests/velocity-of-money/VelocityOfMoneyPage'));
+/* 2 */ const PlannedIndicatorsPage = lazy(() => import('src/pages/tests/planned-indicators/PlannedIndicatorsPage'));
+/* 3 */ const IndexesPage = lazy(() => import('src/pages/tests/3-indexes/IndexesPage'));
+/* 4 */ const StandardLivingPopulationPage = lazy(() => import('src/pages/tests/4-standard-living-population/StandardLivingPopulationPage'));
+/* 5 */ const SalaryTrendPage = lazy(() => import('src/pages/tests/5-salary-trend/SalaryTrendPage'));
 const WelcomePage = lazy(() => import('src/pages/welcome/WelcomePage'));
 const NotFoundPage = lazy(() => import('src/pages/not-found/NotFoundPage'));
 
