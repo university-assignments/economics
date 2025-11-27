@@ -89,6 +89,16 @@ const SECTIONS: Section[] = [
 			t: [ -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6 ].join('|'),
 		}),
 	},
+	{
+		modified_at: new Date('2025-11-26 22:30'),
+		title: 'Ряды динамики',
+
+		path: 'tests/6-dynamics-series',
+		search: new URLSearchParams({
+			years: [ 2006, 2007, 2008, 2009, 2010, 2011 ].join('|'),
+			y: [ 101, 108, 110, 117, 122, 128 ].join('|'),
+		}),
+	},
 ];
 
 export default function WelcomePage ()
